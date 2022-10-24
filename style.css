@@ -3,10 +3,12 @@
     --second-background-color: rgb(229,231,235);
     --main-color:rgb(56,65,82);
     --main-button-background-color: rgb(40,118,110);
+    --x0-color:gray;
 
 }
 
 body{
+    margin: 0;
     display: flex;
     text-align: center;
     background-color: var(--main-background-color);
@@ -17,44 +19,93 @@ body{
 }
 
 .container{
-    
+    padding-top: 34px;
+    border-radius: 3px;
     display: flex;
     flex-direction: row;
-    width: 305px;
-    background-color:var(--second-background-color);
-}
-.container :nth-child(2), .container :nth-child(1){
-    border-bottom: solid var(--main-background-color) 1px;
+    width: 300px;
     
 }
-.container :nth-child(2), .container :nth-child(1), .container :nth-child(3){
-    border-right: solid var(--main-background-color) 1px;
-    
+
+.row1Column1, .row1Column2, .row1Column3 ,.row2Column1, .row2Column2, .row2Column3 {
+    border-bottom: 2px solid var(--second-background-color);
 }
+.row1Column2, .row1Column3 , .row2Column2, .row2Column3, .row3Column2, .row3Column3 {
+    border-left: 2px solid var(--second-background-color);
+}
+
+
 .nineDivs{
     width: 100px;
     min-height: 100px;
-    margin-top: 24px;
-    font-size: 56px;
+    font-size: 86px;
+
+}
+.nineDivs span{
+    display: none;
+}
+
+.winning-message{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 3rem;
+
+
+     justify-content: center;
+    align-items: center;
+    
+}
+.winning-message button{
+    cursor: pointer;
     border: none;
-    color:var(--second-background-color)
+    background-color: var(--second-background-color);
+    padding: .24em .5em;
+    font-size: 2rem;
+    border-radius: 3px;
 }
 
-.nineDivs:hover{
-   color: var(--main-color);
+.winning-message button:hover{
+    cursor: pointer;
+    border: none;
+    background-color:white;
+    padding: .24em .5em;
+    font-size: 2rem;
+    color: black;
+    border-radius: 3px;
 }
 
+.winning-message.show{
+    display: flex ;
+}
 
+.cell{
+    cursor: pointer;
+}
+/* .cell.x,
+.cell.circle{
+    cursor: not-allowed;
+} */
 
+.x{
+    color:var(--x0-color);
+    
+}
+.circle{
+    color:var(--x0-color)      
+}
+.cell.x::before, 
+.cell.x.after{
+    content: 'X'
+}
 
-
-
-
-
-
-
-
-
+.cell.circle::before, 
+.cell.circle.after{
+    content: 'O'
+}
 
 
 

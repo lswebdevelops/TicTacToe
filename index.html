@@ -12,28 +12,31 @@
     <h1>Tic Tac Toe</h1>
 
 <!-- creating the div container for the 9 divs -->
-<div class="container">
+<div class="container board" id="board">
     <div class="rowContainers">
-    <!-- First row -->
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
+    <!-- First column -->
+    <div class="nineDivs cell  row1Column1" data-cell></div>
+    <div class="nineDivs cell  row2Column1" data-cell></div>
+    <div class="nineDivs cell  row3Column1" data-cell></div>
     </div>
     <div class="rowContainers">
-    <!-- second row -->
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
+    <!-- second column -->
+    <div class="nineDivs cell  row1Column2" data-cell></div>
+    <div class="nineDivs cell  row2Column2" data-cell></div>
+    <div class="nineDivs cell  row3Column2" data-cell></div>
     </div>
     <div class="rowContainers">
-    <!-- third row -->
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
-    <div class="nineDivs">X</div>
+    <!-- third column -->
+    <div class="nineDivs cell  row1Column3" data-cell></div>
+    <div class="nineDivs cell  row2Column3" data-cell></div>
+    <div class="nineDivs cell  row3Column3" data-cell></div>
     </div>
 </div>
 
-
+<div class="winning-message " id="winning-message">
+    <div data-winning-message-text>X Wins!</div>
+    <button id="restartButton">Restart Game</button>
+</div>
 <footer class="footer">
     <marquee><div class="hero-unit">
         <h3><img id="imgOdin" src="https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg">LS-Web-Development</h3>

@@ -1,3 +1,30 @@
-let eXes = {1:"X", 2:"X",3:"X",4:"X",5:"X",6:"X",7:"X",8:"X",9:"X",}
-let Oes =  {1:"O", 2:"O",3:"O",4:"O",5:"O",6:"O",7:"O",8:"O",9:"O",}
 
+const X_CLASS = 'x'
+const CIRCLE_CLASS = 'circle'
+
+const cellElements = document.querySelectorAll('[data-cell]')
+let circleTurn 
+
+
+// for each of the 9 cells listen for a click
+cellElements.forEach(cell => {
+    cell.addEventListener('click', handleClick, {once: true})
+})
+function handleClick(e){
+    const cell = e.target
+    const  currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
+    placeMark(cell, currentClass)
+    // place mark
+    // check for win
+    // check for draw
+    //switch turns
+    swapTurns()
+
+}
+function placeMark(cell, currentClass) {
+    cell.classList.add(currentClass)
+ 
+}
+function swapTurns(){
+    circleTurn = !circleTurn
+}
