@@ -79,16 +79,15 @@ body{
 }
 
 .winning-message.show{
-    display: flex ;
+    display: grid ;
+    /* flex-wrap: wrap; */
+    background-color: var(--second-background-color);
 }
 
 .cell{
     cursor: pointer;
 }
-/* .cell.x,
-.cell.circle{
-    cursor: not-allowed;
-} */
+
 
 .x{
     color:var(--x0-color);
@@ -106,11 +105,16 @@ body{
 .cell.circle.after{
     content: 'O'
 }
+.board.x .cell:hover{
+    background-color: grey;
+    color: white;
+}
 
-
-
-
-
+.board.circle .cell:hover{
+    background-color: grey;
+    color: white;
+}
+/* creating the x and o form */
 
 
 
