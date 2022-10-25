@@ -10,6 +10,10 @@ const WINNING_COMBINATIONS = [
   [0, 4, 8],
   [2, 4, 6]
 ]
+
+
+
+
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
@@ -25,10 +29,14 @@ function startGame() {
   circleTurn = false
   cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
+    
     cell.classList.remove(CIRCLE_CLASS)
     cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, { once: true })
   })
+
+
+
   setBoardHoverClass()
   winningMessageElement.classList.remove('show')
 }
@@ -36,6 +44,7 @@ function startGame() {
 function handleClick(e) {
   const cell = e.target
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
+  
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     endGame(false)
@@ -48,10 +57,15 @@ function handleClick(e) {
 }
 
 function endGame(draw) {
+    //taking name of users
+    const userX = document.querySelector('.userX').value;
+    const userO = document.querySelector('.userO').value;
+    
   if (draw) {
     winningMessageTextElement.innerText = 'Draw!'
   } else {
-    winningMessageTextElement.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+    winningMessageTextElement.innerText = `${circleTurn ? userO : userX} Wins!`
+    
   }
   winningMessageElement.classList.add('show')
 }

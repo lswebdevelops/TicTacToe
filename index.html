@@ -5,34 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/lsweb.png">
     <script src="script.js" defer></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
     <h1>Tic Tac Toe</h1>
 
-<!-- creating the div container for the 9 divs -->
-<div class="container board" id="board">
-    <div class="rowContainers">
-    <!-- First column -->
-    <div class="nineDivs cell  row1Column1" data-cell></div>
-    <div class="nineDivs cell  row2Column1" data-cell></div>
-    <div class="nineDivs cell  row3Column1" data-cell></div>
-    </div>
-    <div class="rowContainers">
-    <!-- second column -->
-    <div class="nineDivs cell  row1Column2" data-cell></div>
-    <div class="nineDivs cell  row2Column2" data-cell></div>
-    <div class="nineDivs cell  row3Column2" data-cell></div>
-    </div>
-    <div class="rowContainers">
-    <!-- third column -->
-    <div class="nineDivs cell  row1Column3" data-cell></div>
-    <div class="nineDivs cell  row2Column3" data-cell></div>
-    <div class="nineDivs cell  row3Column3" data-cell></div>
-    </div>
-</div>
+    <label for="userX">X: 
+        <input class="userX" type="text" maxlength="12" value="Player-X">
+    </label>
+    <label  for="userO">O:         
+        <input class="userO" type="text" maxlength="12" value="Player-O">
+    </label>
+    <hr>
+    <!-- creating the div container for the 9 divs -->
 
+<div class="board" id="board">
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+    <div class="cell" data-cell></div>
+  </div>
 <div class="winning-message show" id="winningMessage">
     <div data-winning-message-text>X Wins!</div>
 
@@ -40,9 +39,12 @@
 </div>
 <footer class="footer">
     <marquee><div class="hero-unit">
-        <h3><img id="imgOdin" src="https://www.theodinproject.com/assets/icons/odin-icon-b5b31c073f7417a257003166c98cc23743654715305910c068b93a3bf4d3065d.svg">LS-Web-Development</h3>
+        <h3><img id="imgOdin" src="images/lsweb.png">
+           <span>LS-Web-Development</span>
+        </h3>
       </div> </marquee> 
     <a href="https://github.com/lswebdevelops/TicTacToe" target="_blank" title="My GitHub Account">GitHub</a>
+ 
 </footer>
 
 </body>
