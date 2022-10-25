@@ -12,8 +12,6 @@ const WINNING_COMBINATIONS = [
 ]
 
 
-
-
 const cellElements = document.querySelectorAll('[data-cell]')
 const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
@@ -26,6 +24,7 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
+
   circleTurn = false
   cellElements.forEach(cell => {
     cell.classList.remove(X_CLASS)
@@ -56,7 +55,9 @@ function handleClick(e) {
   }
 }
 
+
 function endGame(draw) {
+  
     //taking name of users
     const userX = document.querySelector('.userX').value;
     const userO = document.querySelector('.userO').value;
@@ -65,7 +66,11 @@ function endGame(draw) {
     winningMessageTextElement.innerText = 'Draw!'
   } else {
     winningMessageTextElement.innerText = `${circleTurn ? userO : userX} Wins!`
-    
+
+    // creating balls after end of match
+  
+   
+       
   }
   winningMessageElement.classList.add('show')
 }
